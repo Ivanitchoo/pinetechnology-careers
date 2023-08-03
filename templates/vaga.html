@@ -3,12 +3,41 @@
 <html>
   <head>
     <title>{{vaga['titulo']}} - PineTechnology Careers</title>
- 
+    
+    <!-- Link CSS -->
+    {% include 'bootstrap.html' %}
+    <link rel="stylesheet" href="/static/estilos/home.css" type="text/css">
+    
   </head>
   <body>
-    <h3>Título</h3>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
 
-
+     <div class="container">
+      <h1 class="text-center mt-2 mb-4"> PineTechnology Careers </h1>
+       
+      <h3 class = "mb-2">{{vaga.titulo}}</h3>
+       
+      <p class="lead mt-0">{{vaga.localizacao}}</p>
+       
+      <h4>Empresa</h4>
+      <p>{{vaga.empresa}}</p> 
+       
+      <h4>Responsabilidades</h4>
+       <ul>
+         {% for line in vaga.responsabilidades.split("\n") %}
+          <li>{{line}}</li>
+         {% endfor %}
+       </ul>
+       
+      <h4>Requisitos</h4>
+       <ol>
+         {% for line in vaga.requisitos.split("\n") %}
+            <li> {{line}}</li>
+         {% endfor %}
+       </ol>
+     </div>
     
+    {% include 'footer.html' %}
   </body>
 </html>

@@ -22,7 +22,11 @@ def listar_emprego():
 @app.route("/vaga/<id>")
 def visualizar_vaga(id):
   vaga_disponivel = carregar_vaga_from_db(id)
-  return render_template('vaga.html', vaga=vaga_disponivel)
+
+  if not vaga_disponivel:
+    return "Not Found", 404
+  else:
+    return render_template('vaga.html', vaga=vaga_disponivel)
 
 
 if __name__ == '__main__':
