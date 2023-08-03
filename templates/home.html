@@ -19,9 +19,7 @@
       <h1 class="text-center mt-2 mb-4"> PineTechnology Careers </h1>
       
       <div class="row" style="margin-bottom:16px">
-        <p class="lead col-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing         elit, sed do         eiusmod tempor incididunt ut labore et           dolore magna aliqua. Ut        enim ad minim veniam, quis           nostrud exercitation ullamco laboris       nisi ut aliquip          ex ea commodo consequat. Duis aute irure dolor         in           reprehenderit in voluptate velit esse cillum dolore                eu fugiat nulla pariatur. Excepteur sint occaecat           cupidatat           non proident, sunt in culpa qui officia             deserunt mollit anim        id est laborum.
-        </p>
+        {% include 'presentation_text.html' %}
         <div class="col-6">
           <img src="/static/people_working.jpg" style="height:320px; border-radius: 4px"; >
         </div>
@@ -33,7 +31,7 @@
       <div> 
         
         {%for vaga in vagas: %}
-          {% include 'jobitem.html' %}
+          {% include 'homepage_vagas.html' %}
         {%endfor%}
       
       
