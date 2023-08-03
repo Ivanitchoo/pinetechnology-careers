@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import carregar_vagas_from_db
+from database import carregar_vagas_from_db, carregar_vaga_from_db
 
 app = Flask(__name__)
 
@@ -18,5 +18,12 @@ def listar_emprego():
   return jsonify(vagas_disponiveis)
 
 
-if __name__ == "__main__":
+#rota dinâmica para aceder a página da vaga tendo o ID como o parâmetro
+@app.route("/vaga/<id>")
+def visualizar_vaga(id):
+  vaga_disponivel = carregar_vaga_from_db(id)
+  return render_template('vaga.html', vaga=vaga_disponivel)
+
+
+if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
