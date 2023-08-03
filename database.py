@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 import os
 
-#string *ENCRIPTADA* de conexão á base de dados na cloud 
+#string *ENCRIPTADA* de conexão á base de dados na cloud
 db_connection_string = os.environ['DB_CONNECTION_STRING']
 
 engine = create_engine(
@@ -25,3 +25,15 @@ def carregar_vagas_from_db():
       vagas_disponiveis.append(linha._asdict())
 
     return vagas_disponiveis
+
+
+def carregar_vaga_from_db(id):
+  with engine.connect() as conn:
+    query = conn.execute(text(f"SELECT * FROM vagas WHERE id = {id}"))
+
+    vaga_disponivel = query.all()
+
+    if len(vaga_disponivel) == 0:
+      return None
+    else:
+      return vaga_disponivel[0]._asdict()
