@@ -14,14 +14,18 @@
   <!--Conteúdo da Página-->
   <body>
     {% include 'nav.html' %}
-    {% include 'banner.html' %}
+    <!-- {% include 'banner.html' %}-->
     <div class="container">
       <h1 class="text-center mt-2 mb-4"> PineTechnology Careers </h1>
       
-      <div class="row" style="margin-bottom:16px">
-        {% include 'presentation_text.html' %}
-        <div class="col-6">
-          <img src="/static/people_working.jpg" style="height:320px; border-radius: 4px"; >
+      <div class="presentation_text row align-items-center mb-4">
+        <div class="col-md-6 pr-md-2 d-flex align-items-stretch">
+          <div class="d-flex flex-column justify-content-center" >
+            {% include 'presentation_text.html' %}  
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-2">
+          <img src="/static/people_working.jpg" class="img-fluid rounded" width="100%" alt="People Working">
         </div>
       </div>
       

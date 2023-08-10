@@ -12,3 +12,26 @@
   padding-bottom:8px;
   margin-bottom: 16px;
 }
+
+.presentation_text{
+  margin-bottom:16px;
+}
+
+
+@media (max-width: 768px) {
+    presentation_text{
+      flex-direction: column-reverse;
+    }
+  .job_box.row {
+      flex-direction: column; /* Stack items vertically on mobile and tablet */
+      align-items: center;
+    }
+  .col-md-9{
+    text-align:center;
+  }
+  
+  .job_box .col-md-3 {
+      text-align: center; /* Center the button */
+      margin-top: 1rem; /* Add some space between content and button */
+  }
+}

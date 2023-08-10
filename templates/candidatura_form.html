@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Cadidatura: {{vaga['titulo']}} - PineTechnology Careers </title>
+
+    <!-- Link CSS -->
+    {% include 'bootstrap.html' %}
+    <link rel="stylesheet" href="/static/estilos/home.css" type="text/css">
+    
+  </head>
+
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      <form action="/vaga/{{vaga['id']}}/candidatura_form/submit" method="posto">
+
+        <div class="mb-2">
+          <label>Primeiro Nome</label><br>
+          <input type="text" name="primeiro_nome" placeholder="Jorge"><br><br>
+        </div>
+
+        <div class="mb-2">
+          <label>Apelido</label><br>
+          <input type="text" name="apelido" placeholder="Macandja"><br><br>  
+        </div>  
+        
+
+        <div class="mb-2">
+          <label>Email</label><br>
+          <input type="text" name="email" placeholder=" name@example.com"><br><br>
+        </div>
+        
+        <div class="mb-2">
+          <label>LinkedIn</label><br>
+          <input type="text" name="linkedin_url" placeholder="https://www.linkedin.com/in/username/ "><br><br>
+        </div>
+
+        <div class="mb-2">
+          <label>Educação</label><br>
+          <input type="textarea" name="educacao"><br><br>
+        </div>
+
+        <div class="mb-2">
+          <label>Experiência de trabalho</label><br>
+          <input type="textarea" name="experiencia"><br><br>
+        </div>
+          
+        <div class="mb-2">
+          <label>Telefone</label><br>
+          <input type="text" name="first_name" placeholder=" 843998566"><br><br>
+        </div>
+
+        <div class="mb-2">
+          <label>Endereço</label><br>
+          <input type="text" name="endereco" placeholder="Av. 25 de setembro"><br><br>
+        </div>
+  
+  
+        <input type="submit" >
+      </form>
+    </div>
+
+    
+    {% include 'footer.html' %}
+  </body>
+</html>
